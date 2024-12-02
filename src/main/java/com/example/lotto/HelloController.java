@@ -50,6 +50,8 @@ public class HelloController {
                         sleeptime *= 1.1f;}
                 do {
                     randomNum = random.nextInt(90) + 1;
+                    int finalRandomNum = randomNum;
+                    Platform.runLater(() -> textOut.setText(String.valueOf(finalRandomNum)));
                 } while(sorsoltSzamok.contains(randomNum));
 
                 sorsoltSzamok.add(randomNum);
