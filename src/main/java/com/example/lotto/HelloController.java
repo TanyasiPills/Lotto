@@ -39,7 +39,6 @@ public class HelloController {
             try {
                 button.setDisable(true);
                 int randomNum = 0;
-                do {
                     float sleeptime = 80f;
                     for (int i = 0; i < 15; i++) {
                         randomNum = random.nextInt(90) + 1;
@@ -48,8 +47,9 @@ public class HelloController {
                         Platform.runLater(() -> textOut.setText(String.valueOf(finalRandomNum)));
 
                         Thread.sleep((int) sleeptime);
-                        sleeptime *= 1.1f;
-                    }
+                        sleeptime *= 1.1f;}
+                do {
+                    randomNum = random.nextInt(90) + 1;
                 } while(sorsoltSzamok.contains(randomNum));
 
                 sorsoltSzamok.add(randomNum);
